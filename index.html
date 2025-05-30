@@ -31,14 +31,25 @@
 <body>
     <div class="video-container">
         <h1 style="color: white; text-align: center; margin-bottom: 20px;">Detective Arjun Trailer</h1>
+        <p style="color: white; text-align: center; margin-bottom: 15px;">Please watch full trailer! There is surprise at ending!</p>
         <video id="myVideo" controls controlsList="nodownload" disablePictureInPicture autoplay>
             <source src="DetectiveArjunTrailer.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <br> Please watch full trailer! There is surprise at ending:<br>
+        <div id="question" style="display: none; color: white; text-align: center; margin-top: 20px; font-size: 18px; padding: 15px;">
+            Answer and DM bhargav and win a free ticket for Detective Arjun:<br>
+            What is Gautham's ( Surya ) proffession?
+        </div>
     </div>
     <script>
         // Prevent right-click
         document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // Show question when video ends
+        document.getElementById('myVideo').addEventListener('ended', function() {
+            document.getElementById('question').style.display = 'block';
+        });
 
         // Prevent keyboard shortcuts
         document.addEventListener('keydown', (e) => {
